@@ -1,0 +1,23 @@
+{
+  "name": "geofftech/laravel-opengraph",
+  "description": "OpenGraph configuration for Laravel",
+  "type": "library",
+  "require": {
+    "illuminate/support": "*"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "GeoffTech\\LaravelOpenGraph\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Geoff",
+      "email": "geoff@geofftech.com"
+    }
+  ]
+}
