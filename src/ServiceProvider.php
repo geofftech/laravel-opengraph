@@ -1,6 +1,6 @@
 <?php
 
-namespace GeoffTech\LaravelTools;
+namespace GeoffTech\LaravelOpenGraph;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
