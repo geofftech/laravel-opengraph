@@ -4,16 +4,6 @@ namespace GeoffTech\LaravelOpenGraph;
 
 class OpenGraph
 {
-
-
-
-
-  // Context::
-
-
-
-
-
-
+    // Context::
 
 }

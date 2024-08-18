@@ -4,5 +4,5 @@ use GeoffTech\LaravelOpenGraph\OpenGraph;
 
 function openGraph()
 {
-  return new OpenGraph();
+    return new OpenGraph;
 }
