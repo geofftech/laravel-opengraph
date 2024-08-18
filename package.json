@@ -1,0 +1,6 @@
+{
+  "name": "laravel-opengraph",
+  "scripts": {
+    "pint": "./vendor/bin/pint"
+  }
+}

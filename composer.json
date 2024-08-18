@@ -19,5 +19,15 @@
       "name": "Geoff",
       "email": "geoff@geofftech.com"
     }
-  ]
+  ],
+  "require-dev": {
+    "laravel/pint": "^1.17"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "GeoffTech\\LaravelOpenGraph\\ServiceProvider"
+      ]
+    }
+  }
 }
