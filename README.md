@@ -1,31 +1,31 @@
 # GeoffTech Laravel OpenGraph
 
-## Usage
+## Usage examples
 
 - in render function
 
 ```
-   OpenGraph::set([
-      'title' => 'Badges',
-    ]);
-```
+   public function render(OpenGraph $og)
+    {
+        if (!$this->project->is_published) {
+            abort(404);
+        }
 
-````
-    OpenGraph::merge([
-      'title' => 'Organisation :: ' . $this->organisation->name,
-      'image' => $this->organisation->image_url,
-    ]);
+        $og->title($this->project->name);
+
+        return view('livewire.pages.project-show-page');
+    }
 ```
 
 ## Implementation
 
 - add to layout head
 
-````
-
-    <x-opengraph />
-
 ```
+    <x-opengraph::head />
+```
+
+- remove any `title` tags that may be there
 
 ## Tutorials
 
@@ -48,4 +48,7 @@
 - Pinterest Rich Pins Validator
 
   - https://developers.pinterest.com/docs/rich-pins/rich-pins/
+
+```
+
 ```

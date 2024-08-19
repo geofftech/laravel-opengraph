@@ -9,6 +9,8 @@ class ServiceProvider extends BaseServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/opengraph.php', 'opengraph');
+
+        $this->app->singleton(OpenGraph::class);
     }
 
     public function boot(): void
