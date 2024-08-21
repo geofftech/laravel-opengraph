@@ -16,7 +16,7 @@ class OpenGraph
             // 'title' => config("app.name"),
             'description' => '',
             'image' => '', // default = first on page
-            'url' => config('app.url'),
+            'url' => request()->url(),
 
             // twitter
             'twitter:card' => 'summary_large_image',
@@ -48,6 +48,13 @@ class OpenGraph
         return $this;
     }
 
+    public function url(string $url)
+    {
+        $this->data['url'] = $url;
+
+        return $this;
+    }
+
     public function set($field, $value)
     {
         $this->data[$field] = $value;
@@ -68,7 +75,11 @@ class OpenGraph
 
         while (!$result && count($fields)) {
             $field = array_shift($fields);
-            $result = is_callable($field)
+
+            // nb. is_callable('url') converts to the url internal function
+            // so using gettype
+
+            $result = gettype($field) === 'object'
                 ? $field()
                 : $this->data[$field] ?? null;
         }

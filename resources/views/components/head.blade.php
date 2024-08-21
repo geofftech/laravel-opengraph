@@ -5,8 +5,9 @@
 {{-- Page Title --}}
 
 <title>
-    @hasSection("title") @yield("title") :: @endif
-    {{ $og->getTitle(["title"]) }}
+    @hasSection("title") @yield("title") 
+    @else {{ $og->getTitle(["title"]) }}
+    @endif
 </title>
 
 {{-- Open Graph --}}
@@ -18,10 +19,7 @@
     :content="$og->get(['description'])"
 />
 <x-opengraph::meta property="og:image" :content="$og->get(['image'])" />
-<meta
-    property="og:url"
-    content="{{ $og->get(["url", fn () => Request::url()]) }}"
-/>
+<x-opengraph::meta property="og:url" :content="$og->get(['url'])" />
 
 {{-- Twiter --}}
 
