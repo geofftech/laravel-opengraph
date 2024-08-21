@@ -20,7 +20,7 @@
 <x-opengraph::meta property="og:image" :content="$og->get(['image'])" />
 <meta
     property="og:url"
-    content="{{ $og->get(["image", fn () => Request::url()]) }}"
+    content="{{ $og->get(["url", fn () => Request::url()]) }}"
 />
 
 {{-- Twiter --}}
